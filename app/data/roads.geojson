@@ -1,0 +1,3029 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei1-1",
+    "name": "纬一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.8936
+     ],
+     [
+      116.385,
+      39.8936
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei1-2",
+    "name": "纬一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.8936
+     ],
+     [
+      116.389,
+      39.8936
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei1-3",
+    "name": "纬一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.8936
+     ],
+     [
+      116.393,
+      39.8936
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei1-4",
+    "name": "纬一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.8936
+     ],
+     [
+      116.397,
+      39.8936
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei1-5",
+    "name": "纬一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.8936
+     ],
+     [
+      116.401,
+      39.8936
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei1-6",
+    "name": "纬一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.8936
+     ],
+     [
+      116.405,
+      39.8936
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei1-7",
+    "name": "纬一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.8936
+     ],
+     [
+      116.409,
+      39.8936
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei1-8",
+    "name": "纬一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.8936
+     ],
+     [
+      116.413,
+      39.8936
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei2-1",
+    "name": "纬二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.8972
+     ],
+     [
+      116.385,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei2-2",
+    "name": "纬二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.8972
+     ],
+     [
+      116.389,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei2-3",
+    "name": "纬二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.8972
+     ],
+     [
+      116.393,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei2-4",
+    "name": "纬二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.8972
+     ],
+     [
+      116.397,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei2-5",
+    "name": "纬二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.8972
+     ],
+     [
+      116.401,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei2-6",
+    "name": "纬二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.8972
+     ],
+     [
+      116.405,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei2-7",
+    "name": "纬二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.8972
+     ],
+     [
+      116.409,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei2-8",
+    "name": "纬二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.8972
+     ],
+     [
+      116.413,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei3-1",
+    "name": "纬三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.9008
+     ],
+     [
+      116.385,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei3-2",
+    "name": "纬三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.9008
+     ],
+     [
+      116.389,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei3-3",
+    "name": "纬三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.9008
+     ],
+     [
+      116.393,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei3-4",
+    "name": "纬三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.9008
+     ],
+     [
+      116.397,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei3-5",
+    "name": "纬三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.9008
+     ],
+     [
+      116.401,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei3-6",
+    "name": "纬三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.9008
+     ],
+     [
+      116.405,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei3-7",
+    "name": "纬三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.9008
+     ],
+     [
+      116.409,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei3-8",
+    "name": "纬三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.9008
+     ],
+     [
+      116.413,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei4-1",
+    "name": "纬四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.9044
+     ],
+     [
+      116.385,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei4-2",
+    "name": "纬四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.9044
+     ],
+     [
+      116.389,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei4-3",
+    "name": "纬四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.9044
+     ],
+     [
+      116.393,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei4-4",
+    "name": "纬四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.9044
+     ],
+     [
+      116.397,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei4-5",
+    "name": "纬四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.9044
+     ],
+     [
+      116.401,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei4-6",
+    "name": "纬四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.9044
+     ],
+     [
+      116.405,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei4-7",
+    "name": "纬四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.9044
+     ],
+     [
+      116.409,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei4-8",
+    "name": "纬四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.9044
+     ],
+     [
+      116.413,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei5-1",
+    "name": "纬五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.908
+     ],
+     [
+      116.385,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei5-2",
+    "name": "纬五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.908
+     ],
+     [
+      116.389,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei5-3",
+    "name": "纬五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.908
+     ],
+     [
+      116.393,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei5-4",
+    "name": "纬五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.908
+     ],
+     [
+      116.397,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei5-5",
+    "name": "纬五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.908
+     ],
+     [
+      116.401,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei5-6",
+    "name": "纬五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.908
+     ],
+     [
+      116.405,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei5-7",
+    "name": "纬五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.908
+     ],
+     [
+      116.409,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei5-8",
+    "name": "纬五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.908
+     ],
+     [
+      116.413,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei6-1",
+    "name": "纬六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.9116
+     ],
+     [
+      116.385,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei6-2",
+    "name": "纬六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.9116
+     ],
+     [
+      116.389,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei6-3",
+    "name": "纬六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.9116
+     ],
+     [
+      116.393,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei6-4",
+    "name": "纬六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.9116
+     ],
+     [
+      116.397,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei6-5",
+    "name": "纬六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.9116
+     ],
+     [
+      116.401,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei6-6",
+    "name": "纬六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.9116
+     ],
+     [
+      116.405,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei6-7",
+    "name": "纬六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.9116
+     ],
+     [
+      116.409,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei6-8",
+    "name": "纬六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.9116
+     ],
+     [
+      116.413,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei7-1",
+    "name": "纬七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.9152
+     ],
+     [
+      116.385,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei7-2",
+    "name": "纬七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.9152
+     ],
+     [
+      116.389,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei7-3",
+    "name": "纬七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.9152
+     ],
+     [
+      116.393,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei7-4",
+    "name": "纬七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.9152
+     ],
+     [
+      116.397,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei7-5",
+    "name": "纬七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.9152
+     ],
+     [
+      116.401,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei7-6",
+    "name": "纬七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.9152
+     ],
+     [
+      116.405,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei7-7",
+    "name": "纬七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.9152
+     ],
+     [
+      116.409,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei7-8",
+    "name": "纬七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.9152
+     ],
+     [
+      116.413,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei8-1",
+    "name": "纬八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.9188
+     ],
+     [
+      116.385,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei8-2",
+    "name": "纬八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.9188
+     ],
+     [
+      116.389,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei8-3",
+    "name": "纬八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.9188
+     ],
+     [
+      116.393,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei8-4",
+    "name": "纬八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.9188
+     ],
+     [
+      116.397,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei8-5",
+    "name": "纬八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.9188
+     ],
+     [
+      116.401,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei8-6",
+    "name": "纬八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.9188
+     ],
+     [
+      116.405,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei8-7",
+    "name": "纬八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.9188
+     ],
+     [
+      116.409,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei8-8",
+    "name": "纬八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.9188
+     ],
+     [
+      116.413,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei9-1",
+    "name": "纬九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.9224
+     ],
+     [
+      116.385,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei9-2",
+    "name": "纬九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.9224
+     ],
+     [
+      116.389,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei9-3",
+    "name": "纬九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.9224
+     ],
+     [
+      116.393,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei9-4",
+    "name": "纬九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.9224
+     ],
+     [
+      116.397,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei9-5",
+    "name": "纬九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.9224
+     ],
+     [
+      116.401,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei9-6",
+    "name": "纬九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.9224
+     ],
+     [
+      116.405,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei9-7",
+    "name": "纬九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.9224
+     ],
+     [
+      116.409,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "wei9-8",
+    "name": "纬九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.9224
+     ],
+     [
+      116.413,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing1-1",
+    "name": "经一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.8936
+     ],
+     [
+      116.381,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing1-2",
+    "name": "经一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.8972
+     ],
+     [
+      116.381,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing1-3",
+    "name": "经一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.9008
+     ],
+     [
+      116.381,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing1-4",
+    "name": "经一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.9044
+     ],
+     [
+      116.381,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing1-5",
+    "name": "经一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.908
+     ],
+     [
+      116.381,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing1-6",
+    "name": "经一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.9116
+     ],
+     [
+      116.381,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing1-7",
+    "name": "经一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.9152
+     ],
+     [
+      116.381,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing1-8",
+    "name": "经一路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.381,
+      39.9188
+     ],
+     [
+      116.381,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing2-1",
+    "name": "经二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.8936
+     ],
+     [
+      116.385,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing2-2",
+    "name": "经二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.8972
+     ],
+     [
+      116.385,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing2-3",
+    "name": "经二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.9008
+     ],
+     [
+      116.385,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing2-4",
+    "name": "经二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.9044
+     ],
+     [
+      116.385,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing2-5",
+    "name": "经二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.908
+     ],
+     [
+      116.385,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing2-6",
+    "name": "经二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.9116
+     ],
+     [
+      116.385,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing2-7",
+    "name": "经二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.9152
+     ],
+     [
+      116.385,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing2-8",
+    "name": "经二路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.385,
+      39.9188
+     ],
+     [
+      116.385,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing3-1",
+    "name": "经三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.8936
+     ],
+     [
+      116.389,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing3-2",
+    "name": "经三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.8972
+     ],
+     [
+      116.389,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing3-3",
+    "name": "经三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.9008
+     ],
+     [
+      116.389,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing3-4",
+    "name": "经三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.9044
+     ],
+     [
+      116.389,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing3-5",
+    "name": "经三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.908
+     ],
+     [
+      116.389,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing3-6",
+    "name": "经三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.9116
+     ],
+     [
+      116.389,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing3-7",
+    "name": "经三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.9152
+     ],
+     [
+      116.389,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing3-8",
+    "name": "经三路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.389,
+      39.9188
+     ],
+     [
+      116.389,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing4-1",
+    "name": "经四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.8936
+     ],
+     [
+      116.393,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing4-2",
+    "name": "经四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.8972
+     ],
+     [
+      116.393,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing4-3",
+    "name": "经四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.9008
+     ],
+     [
+      116.393,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing4-4",
+    "name": "经四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.9044
+     ],
+     [
+      116.393,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing4-5",
+    "name": "经四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.908
+     ],
+     [
+      116.393,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing4-6",
+    "name": "经四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.9116
+     ],
+     [
+      116.393,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing4-7",
+    "name": "经四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.9152
+     ],
+     [
+      116.393,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing4-8",
+    "name": "经四路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.393,
+      39.9188
+     ],
+     [
+      116.393,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing5-1",
+    "name": "经五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.8936
+     ],
+     [
+      116.397,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing5-2",
+    "name": "经五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.8972
+     ],
+     [
+      116.397,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing5-3",
+    "name": "经五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.9008
+     ],
+     [
+      116.397,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing5-4",
+    "name": "经五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.9044
+     ],
+     [
+      116.397,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing5-5",
+    "name": "经五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.908
+     ],
+     [
+      116.397,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing5-6",
+    "name": "经五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.9116
+     ],
+     [
+      116.397,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing5-7",
+    "name": "经五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.9152
+     ],
+     [
+      116.397,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing5-8",
+    "name": "经五路",
+    "maxspeed": 60
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.397,
+      39.9188
+     ],
+     [
+      116.397,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing6-1",
+    "name": "经六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.8936
+     ],
+     [
+      116.401,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing6-2",
+    "name": "经六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.8972
+     ],
+     [
+      116.401,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing6-3",
+    "name": "经六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.9008
+     ],
+     [
+      116.401,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing6-4",
+    "name": "经六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.9044
+     ],
+     [
+      116.401,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing6-5",
+    "name": "经六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.908
+     ],
+     [
+      116.401,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing6-6",
+    "name": "经六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.9116
+     ],
+     [
+      116.401,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing6-7",
+    "name": "经六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.9152
+     ],
+     [
+      116.401,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing6-8",
+    "name": "经六路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.401,
+      39.9188
+     ],
+     [
+      116.401,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing7-1",
+    "name": "经七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.8936
+     ],
+     [
+      116.405,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing7-2",
+    "name": "经七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.8972
+     ],
+     [
+      116.405,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing7-3",
+    "name": "经七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.9008
+     ],
+     [
+      116.405,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing7-4",
+    "name": "经七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.9044
+     ],
+     [
+      116.405,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing7-5",
+    "name": "经七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.908
+     ],
+     [
+      116.405,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing7-6",
+    "name": "经七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.9116
+     ],
+     [
+      116.405,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing7-7",
+    "name": "经七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.9152
+     ],
+     [
+      116.405,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing7-8",
+    "name": "经七路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.405,
+      39.9188
+     ],
+     [
+      116.405,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing8-1",
+    "name": "经八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.8936
+     ],
+     [
+      116.409,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing8-2",
+    "name": "经八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.8972
+     ],
+     [
+      116.409,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing8-3",
+    "name": "经八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.9008
+     ],
+     [
+      116.409,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing8-4",
+    "name": "经八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.9044
+     ],
+     [
+      116.409,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing8-5",
+    "name": "经八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.908
+     ],
+     [
+      116.409,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing8-6",
+    "name": "经八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.9116
+     ],
+     [
+      116.409,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing8-7",
+    "name": "经八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.9152
+     ],
+     [
+      116.409,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing8-8",
+    "name": "经八路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.409,
+      39.9188
+     ],
+     [
+      116.409,
+      39.9224
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing9-1",
+    "name": "经九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.413,
+      39.8936
+     ],
+     [
+      116.413,
+      39.8972
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing9-2",
+    "name": "经九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.413,
+      39.8972
+     ],
+     [
+      116.413,
+      39.9008
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing9-3",
+    "name": "经九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.413,
+      39.9008
+     ],
+     [
+      116.413,
+      39.9044
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing9-4",
+    "name": "经九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.413,
+      39.9044
+     ],
+     [
+      116.413,
+      39.908
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing9-5",
+    "name": "经九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.413,
+      39.908
+     ],
+     [
+      116.413,
+      39.9116
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing9-6",
+    "name": "经九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.413,
+      39.9116
+     ],
+     [
+      116.413,
+      39.9152
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing9-7",
+    "name": "经九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.413,
+      39.9152
+     ],
+     [
+      116.413,
+      39.9188
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "id": "jing9-8",
+    "name": "经九路",
+    "maxspeed": 40
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      116.413,
+      39.9188
+     ],
+     [
+      116.413,
+      39.9224
+     ]
+    ]
+   }
+  }
+ ]
+}

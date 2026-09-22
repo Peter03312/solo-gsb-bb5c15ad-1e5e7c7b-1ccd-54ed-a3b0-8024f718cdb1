@@ -1,0 +1,23 @@
+services:
+  mapmatch:
+    build: .
+    container_name: mapmatch-api
+    ports:
+      - "8000:8000"
+    environment:
+      # 匹配参数（均可按需调整）
+      MATCH_RADIUS_M: "50"        # 候选道路搜索半径（米）
+      HMM_SIGMA_M: "15"           # GPS 噪声标准差（米）
+      HMM_BETA_M: "30"            # 路径/直线距离差衰减（米）
+      SPEED_TOLERANCE: "1.4"      # 限速容忍倍数
+      HARD_MAX_SPEED_KMH: "180"   # 超过即判定转移不可行
+      # ROADS_GEOJSON: /srv/app/app/data/roads.geojson  # 可挂载自己的路网覆盖
+      # DB_PATH: /data/mapmatch.db
+    volumes:
+      - mapmatch-data:/data
+      # 使用自定义路网时取消注释：
+      # - ./my_roads.geojson:/srv/app/app/data/roads.geojson:ro
+    restart: unless-stopped
+
+volumes:
+  mapmatch-data:
