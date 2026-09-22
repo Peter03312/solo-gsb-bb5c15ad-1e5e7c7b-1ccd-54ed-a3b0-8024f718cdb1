@@ -12,7 +12,8 @@ from .config import settings
 from .db import Database
 from .mapmatch.matcher import GpsPoint, MatchParams, match_trajectory
 from .mapmatch.road_network import RoadNetwork
-from .schemas import MatchParamsIn, TrajectoryCreated, TrajectorySubmit
+from .mapmatch.travel_profile import build_travel_profile
+from .schemas import MatchParamsIn, TrajectoryCreated, TrajectorySubmit, TravelProfileResponse
 
 network: Optional[RoadNetwork] = None
 db: Optional[Database] = None
@@ -88,6 +89,51 @@ def health():
 @app.get("/api/roads/summary", tags=["meta"])
 def roads_summary():
     return _get_network().summary()
+
+
+@app.get("/api/roads/travel-profile", response_model=TravelProfileResponse, tags=["roads"])
+def road_travel_profile(
+    trajectory_ids: str = Query(
+        ...,
+        description="逗号分隔的轨迹 id 列表，如 trajectory_ids=ab12,cd34",
+    )
+):
+    """按道路边与行驶方向聚合已持久化匹配结果的通行画像（中位数/P90 速度）。
+
+    不存在的轨迹与尚未匹配的轨迹不会导致失败，分别在
+    missing_trajectory_ids / unmatched_trajectory_ids 中回显；
+    没有任何有效样本时 edges 为空。
+    """
+    # 逗号分隔解析 + 去重（保持请求中的顺序）
+    tids: list[str] = []
+    seen: set[str] = set()
+    for raw in trajectory_ids.split(","):
+        tid = raw.strip()
+        if tid and tid not in seen:
+            seen.add(tid)
+            tids.append(tid)
+    if not tids:
+        raise HTTPException(422, "trajectory_ids 至少需要包含一个轨迹 id")
+
+    database = _get_db()
+    existing = database.existing_trajectory_ids(tids)
+    missing = [t for t in tids if t not in existing]
+    matches = database.get_matches([t for t in tids if t in existing])
+    unmatched = [t for t in tids if t in existing and t not in matches]
+    used = [t for t in tids if t in matches]
+
+    profile = build_travel_profile(
+        _get_network(),
+        [(t, matches[t]["result"]) for t in used],
+        max_speed_kmh=settings.profile_max_speed_kmh,
+    )
+    return {
+        "trajectory_ids": used,
+        "missing_trajectory_ids": missing,
+        "unmatched_trajectory_ids": unmatched,
+        "matched_count": len(used),
+        **profile,
+    }
 
 
 # ---------- 轨迹 ----------

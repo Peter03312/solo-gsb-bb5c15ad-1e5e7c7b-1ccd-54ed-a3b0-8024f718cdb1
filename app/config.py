@@ -48,6 +48,9 @@ class Settings:
     default_road_speed_kmh: float = field(
         default_factory=lambda: _float("DEFAULT_ROAD_SPEED_KMH", 50.0)
     )
+    profile_max_speed_kmh: float = field(
+        default_factory=lambda: _float("PROFILE_MAX_SPEED_KMH", 180.0)
+    )
 
 
 settings = Settings()

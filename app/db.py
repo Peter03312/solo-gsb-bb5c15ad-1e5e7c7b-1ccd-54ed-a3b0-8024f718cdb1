@@ -6,7 +6,7 @@ import os
 import sqlite3
 import uuid
 from datetime import datetime, timezone
-from typing import Optional
+from typing import Optional, Sequence
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS trajectories (
@@ -78,6 +78,17 @@ class Database:
             ).fetchall()
         return [dict(r) for r in rows]
 
+    def existing_trajectory_ids(self, tids: Sequence[str]) -> set[str]:
+        """返回给定 id 中实际存在的轨迹 id 集合。"""
+        if not tids:
+            return set()
+        placeholders = ",".join("?" * len(tids))
+        with self._connect() as conn:
+            rows = conn.execute(
+                f"SELECT id FROM trajectories WHERE id IN ({placeholders})", tuple(tids)
+            ).fetchall()
+        return {r["id"] for r in rows}
+
     # ---------- 匹配结果 ----------
 
     def save_match(self, tid: str, status: str, params: dict, result: dict) -> None:
@@ -98,4 +109,24 @@ class Database:
             "params": json.loads(row["params_json"]),
             "result": json.loads(row["result_json"]),
             "created_at": row["created_at"],
+        }
+
+    def get_matches(self, tids: Sequence[str]) -> dict[str, dict]:
+        """批量读取匹配结果，返回 {trajectory_id: match}（跳过未匹配的轨迹）。"""
+        if not tids:
+            return {}
+        placeholders = ",".join("?" * len(tids))
+        with self._connect() as conn:
+            rows = conn.execute(
+                f"SELECT * FROM matches WHERE trajectory_id IN ({placeholders})", tuple(tids)
+            ).fetchall()
+        return {
+            row["trajectory_id"]: {
+                "trajectory_id": row["trajectory_id"],
+                "status": row["status"],
+                "params": json.loads(row["params_json"]),
+                "result": json.loads(row["result_json"]),
+                "created_at": row["created_at"],
+            }
+            for row in rows
         }

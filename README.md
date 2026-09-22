@@ -41,6 +41,8 @@ curl -X POST http://localhost:8000/api/trajectories \
 TID=<上一步返回的 trajectory_id>
 curl http://localhost:8000/api/trajectories/$TID/match
 curl http://localhost:8000/api/trajectories/$TID/match/geojson > matched.geojson
+# 道路通行画像（多个轨迹 id 用逗号分隔）
+curl "http://localhost:8000/api/roads/travel-profile?trajectory_ids=$TID"
 ```
 
 `matched.geojson` 可直接拖入 [geojson.io](https://geojson.io) 或 QGIS 查看匹配路径。
@@ -51,6 +53,7 @@ curl http://localhost:8000/api/trajectories/$TID/match/geojson > matched.geojson
 |---|---|---|
 | GET | `/api/health` | 健康检查 + 路网摘要 |
 | GET | `/api/roads/summary` | 路网统计（边数、总长、道路名） |
+| GET | `/api/roads/travel-profile?trajectory_ids=...` | 道路通行画像：按边与方向聚合典型/高峰速度 |
 | POST | `/api/trajectories` | 提交轨迹，默认立即匹配 |
 | GET | `/api/trajectories` | 轨迹列表 |
 | GET | `/api/trajectories/{id}` | 轨迹详情（含原始点） |
@@ -83,6 +86,54 @@ curl http://localhost:8000/api/trajectories/$TID/match/geojson > matched.geojson
   - `no_feasible_transition` — 路网不连通或隐含速度超过硬上限
 - `segments`：匹配成功的连续分段及其沿网几何
 
+### 道路通行画像
+
+`GET /api/roads/travel-profile?trajectory_ids=<id1>,<id2>` 基于**已持久化的匹配结果**，按道路边与行驶方向聚合相邻匹配点的沿网行驶时间/距离：
+
+- 相邻匹配点的 Viterbi 转移明细（`transition.legs`）给出沿网途经的每条边及里程区间；两点间时间按各边里程占比分摊（假设区间内匀速），得到逐边隐含速度
+- 同一条边的两个行驶方向分别统计：`forward` 为沿边几何（GeoJSON 坐标顺序）正向，`backward` 为反向
+- 速度分布用**中位数**表示典型通行速度（`median_speed_kmh`）、**P90** 表示高峰通行速度（`p90_speed_kmh`，线性插值）
+
+返回示例：
+
+```json
+{
+  "trajectory_ids": ["ab12cd34ef56"],
+  "missing_trajectory_ids": [],
+  "unmatched_trajectory_ids": [],
+  "matched_count": 1,
+  "total_samples": 3,
+  "total_ignored": 0,
+  "ignored_count_by_reason": {},
+  "edges": [
+    {
+      "edge_id": "wei3-1",
+      "edge_name": "纬三路",
+      "direction": "forward",
+      "sample_count": 3,
+      "distance_m": 341.2,
+      "sampled_distance_m": 253.4,
+      "sampled_duration_s": 27.0,
+      "median_speed_kmh": 33.8,
+      "p90_speed_kmh": 34.1
+    }
+  ],
+  "ignored": []
+}
+```
+
+行为说明：
+
+- 轨迹 id 以**逗号分隔**，可传多个；不存在的 id 进入 `missing_trajectory_ids`，存在但尚未匹配的进入 `unmatched_trajectory_ids`，均不导致错误
+- 没有任何有效样本（全部 id 无效/未匹配，或样本全部被剔除）时 `edges` 为空数组、HTTP 200，不会返回 500
+- 被剔除的样本在 `ignored` 中逐条回显（来源轨迹、相邻点序号、边、原因与说明），并在 `ignored_count_by_reason` 汇总。原因码：
+  - `missing_timestamp` — 相邻匹配点至少一端缺少时间戳
+  - `non_monotonic_timestamp` — 时间戳逆序或时间差为 0
+  - `incoherent_match` — 转移明细缺失/无 legs 或序号不连续（跨断段）
+  - `edge_not_found` — 匹配结果引用的边在当前路网中不存在
+  - `zero_distance` — 相邻匹配点间沿网距离为 0，无法计算速度
+  - `implausible_speed` — 隐含速度超过可信上限（`PROFILE_MAX_SPEED_KMH`，默认 180km/h）
+
 ## 算法说明
 
 1. **候选投影**：空间网格索引筛选半径 `MATCH_RADIUS_M` 内的路段，将 GPS 点投影到路段上，得到投影点、垂直距离与沿边里程。
@@ -105,6 +156,7 @@ curl http://localhost:8000/api/trajectories/$TID/match/geojson > matched.geojson
 | `HARD_MAX_SPEED_KMH` | `180` | 隐含速度硬上限（km/h），超过即不可行 |
 | `GRID_CELL_M` | `100` | 空间索引网格边长（米） |
 | `DEFAULT_ROAD_SPEED_KMH` | `50` | 路网未标注 maxspeed 时的默认限速 |
+| `PROFILE_MAX_SPEED_KMH` | `180` | 通行画像中可信速度上限（km/h），超过的样本计入 `implausible_speed` |
 
 使用自己的路网：
 
@@ -127,6 +179,7 @@ app/
     geo.py                # 投影与距离计算
     road_network.py       # 路网加载、空间索引、候选投影、Dijkstra
     matcher.py            # HMM + Viterbi 解码、断段处理
+    travel_profile.py     # 道路通行画像：沿网时间/距离聚合、中位数/P90、样本剔除
 scripts/generate_roads.py # 生成内置路网与示例轨迹
 examples/sample_trajectory.json
 tests/                    # 单元测试 + API 端到端测试
