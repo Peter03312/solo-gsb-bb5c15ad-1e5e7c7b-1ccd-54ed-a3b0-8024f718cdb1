@@ -12,6 +12,7 @@ from .config import settings
 from .db import Database
 from .mapmatch.matcher import GpsPoint, MatchParams, match_trajectory
 from .mapmatch.road_network import RoadNetwork
+from .mapmatch.travel_profile import build_travel_profile
 from .schemas import MatchParamsIn, TrajectoryCreated, TrajectorySubmit
 
 network: Optional[RoadNetwork] = None
@@ -88,6 +89,46 @@ def health():
 @app.get("/api/roads/summary", tags=["meta"])
 def roads_summary():
     return _get_network().summary()
+
+
+@app.get("/api/roads/travel-profile", tags=["roads"])
+def roads_travel_profile(
+    trajectory_ids: Optional[str] = Query(
+        None,
+        description="轨迹 ID 列表，逗号分隔（如 a,b,c）；缺省或为空时返回空数据",
+    ),
+):
+    """基于已持久化匹配结果的道路通行画像：按边 + 方向聚合典型/高峰通行速度。
+
+    时间戳缺失、逆序或断段不连贯等样本会被剔除并在 ignored_samples 中说明原因；
+    无任何有效样本时返回空 edges，而不是报错。
+    """
+    raw_ids = [t.strip() for t in (trajectory_ids or "").split(",")]
+    tids = list(dict.fromkeys(t for t in raw_ids if t))
+
+    results: list[tuple[str, dict]] = []
+    ignored_trajectories: list[dict] = []
+    if tids:
+        matches = _get_db().get_matches(tids)
+        for tid in tids:
+            match = matches.get(tid)
+            if match is None:
+                ignored_trajectories.append(
+                    {
+                        "trajectory_id": tid,
+                        "reason": "match_not_found",
+                        "detail": "轨迹不存在或尚未匹配，已跳过",
+                    }
+                )
+                continue
+            results.append((tid, match["result"]))
+
+    profile = build_travel_profile(results, network=_get_network())
+    return {
+        "trajectory_ids": tids,
+        **profile,
+        "ignored_trajectories": ignored_trajectories,
+    }
 
 
 # ---------- 轨迹 ----------

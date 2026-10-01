@@ -1,6 +1,7 @@
 """API 端到端测试。"""
 import json
 import os
+from datetime import datetime, timedelta, timezone
 
 import pytest
 from fastapi.testclient import TestClient
@@ -100,3 +101,137 @@ def test_404s(client):
     assert client.get("/api/trajectories/nope").status_code == 404
     assert client.get("/api/trajectories/nope/match").status_code == 404
     assert client.post("/api/trajectories/nope/match").status_code == 404
+
+
+# ---------- 道路通行画像 ----------
+
+CENTER_LON, CENTER_LAT = 116.397, 39.908
+DLON = 0.004
+LAT_WEI3 = CENTER_LAT + (2 - 4) * 0.0036
+T0 = datetime(2026, 9, 21, 8, 0, tzinfo=timezone.utc)
+
+
+def _submit(client, name, points):
+    r = client.post("/api/trajectories", json={"name": name, "points": points})
+    assert r.status_code == 201, r.text
+    return r.json()["trajectory_id"]
+
+
+def _eastbound_points(step_s=9):
+    """沿纬三路向东，约 100m/点（~40km/h），覆盖 wei3-1 / wei3-2 两条边。"""
+    start_lon = CENTER_LON - 4 * DLON + 0.0002
+    return [
+        {
+            "lat": LAT_WEI3,
+            "lon": start_lon + k * 0.001167,
+            "timestamp": (T0 + timedelta(seconds=step_s * k)).isoformat(),
+        }
+        for k in range(8)
+    ]
+
+
+def _westbound_points(step_s=9):
+    east = _eastbound_points(step_s)
+    pts = list(reversed(east))
+    for k, p in enumerate(pts):
+        p["timestamp"] = (T0 + timedelta(seconds=step_s * k)).isoformat()
+    return pts
+
+
+def test_travel_profile_empty_inputs_are_200(client):
+    # 缺参数：空数据而非 4xx/5xx
+    r = client.get("/api/roads/travel-profile")
+    assert r.status_code == 200
+    body = r.json()
+    assert body["edges"] == []
+    assert body["trajectory_ids"] == []
+    assert body["trajectory_count"] == 0
+
+    # 不存在 / 未匹配的轨迹：跳过并说明，仍返回 200
+    r = client.get("/api/roads/travel-profile?trajectory_ids=does-not-exist")
+    assert r.status_code == 200
+    body = r.json()
+    assert body["edges"] == []
+    assert body["trajectory_count"] == 0
+    assert body["ignored_trajectories"] == [
+        {
+            "trajectory_id": "does-not-exist",
+            "reason": "match_not_found",
+            "detail": "轨迹不存在或尚未匹配，已跳过",
+        }
+    ]
+
+    # 提交但未匹配（match=false）的轨迹同样跳过
+    r = client.post(
+        "/api/trajectories",
+        json={"name": "未匹配轨迹", "points": _eastbound_points(), "match": False},
+    )
+    tid = r.json()["trajectory_id"]
+    r = client.get(f"/api/roads/travel-profile?trajectory_ids={tid}")
+    assert r.status_code == 200
+    assert r.json()["edges"] == []
+    assert r.json()["ignored_trajectories"][0]["trajectory_id"] == tid
+
+
+def test_travel_profile_aggregates_by_edge_and_direction(client):
+    east_id = _submit(client, "东向通行", _eastbound_points())
+    west_id = _submit(client, "西向通行", _westbound_points())
+
+    r = client.get(f"/api/roads/travel-profile?trajectory_ids={east_id},{west_id}")
+    assert r.status_code == 200
+    body = r.json()
+    assert body["trajectory_ids"] == [east_id, west_id]
+    assert body["trajectory_count"] == 2
+    assert body["ignored_sample_count"] == 0
+    assert body["ignored_samples"] == []
+    assert body["ignored_trajectories"] == []
+
+    edges = body["edges"]
+    assert edges, "应至少聚合出纬三路的两条边"
+    assert {e["edge_name"] for e in edges} == {"纬三路"}
+    directions = {e["direction"] for e in edges}
+    assert directions == {"forward", "backward"}
+    for e in edges:
+        assert {"sample_count", "direction", "distance_m", "median_speed_kmh",
+                "p90_speed_kmh"} <= set(e)
+        assert e["sample_count"] >= 1
+        assert e["distance_m"] > 0
+        assert e["edge_length_m"] > 300  # 网格边长约 342m
+        # ~40km/h 的匀速轨迹
+        assert 30 < e["median_speed_kmh"] < 50
+        assert e["p90_speed_kmh"] >= e["median_speed_kmh"]
+
+    # 仅查东向轨迹时只有 forward；8 点 = 7 对转移（跨路口的转移在两条边上各留一个样本）
+    r = client.get(f"/api/roads/travel-profile?trajectory_ids={east_id}")
+    body = r.json()
+    east_edges = body["edges"]
+    assert {e["direction"] for e in east_edges} == {"forward"}
+    assert body["transition_count"] == 7
+    assert sum(e["sample_count"] for e in east_edges) >= 7
+
+
+def test_travel_profile_reports_ignored_samples(client):
+    # 无时间戳：可正常匹配，但无法测速 -> missing_timestamp
+    no_ts = [{"lat": p["lat"], "lon": p["lon"]} for p in _eastbound_points()[:3]]
+    no_ts_id = _submit(client, "无时间戳", no_ts)
+
+    # 时间戳逆序：lon 向东但时间往回走
+    rev = _eastbound_points()
+    for k, p in enumerate(rev):
+        p["timestamp"] = (T0 - timedelta(seconds=9 * k)).isoformat()
+    rev_id = _submit(client, "时间逆序", rev)
+
+    r = client.get(
+        f"/api/roads/travel-profile?trajectory_ids={no_ts_id},{rev_id}"
+    )
+    assert r.status_code == 200
+    body = r.json()
+    assert body["edges"] == []
+    reasons = {s["reason"] for s in body["ignored_samples"]}
+    assert "missing_timestamp" in reasons
+    assert "timestamp_reversed" in reasons
+    for s in body["ignored_samples"]:
+        assert s["trajectory_id"] in {no_ts_id, rev_id}
+        assert s["seq"] is not None
+        assert s["detail"]
+

@@ -87,6 +87,27 @@ class Database:
                 (tid, status, json.dumps(params), json.dumps(result, ensure_ascii=False), _now()),
             )
 
+    def get_matches(self, tids: list[str]) -> dict[str, Optional[dict]]:
+        """批量取匹配结果；未匹配（含轨迹不存在）的 id 对应 None。"""
+        if not tids:
+            return {}
+        out: dict[str, Optional[dict]] = {tid: None for tid in tids}
+        placeholders = ",".join("?" for _ in tids)
+        with self._connect() as conn:
+            rows = conn.execute(
+                f"SELECT * FROM matches WHERE trajectory_id IN ({placeholders})",
+                tuple(tids),
+            ).fetchall()
+        for row in rows:
+            out[row["trajectory_id"]] = {
+                "trajectory_id": row["trajectory_id"],
+                "status": row["status"],
+                "params": json.loads(row["params_json"]),
+                "result": json.loads(row["result_json"]),
+                "created_at": row["created_at"],
+            }
+        return out
+
     def get_match(self, tid: str) -> Optional[dict]:
         with self._connect() as conn:
             row = conn.execute("SELECT * FROM matches WHERE trajectory_id=?", (tid,)).fetchone()

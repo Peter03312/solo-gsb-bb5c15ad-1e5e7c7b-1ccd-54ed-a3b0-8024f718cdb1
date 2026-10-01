@@ -51,6 +51,7 @@ curl http://localhost:8000/api/trajectories/$TID/match/geojson > matched.geojson
 |---|---|---|
 | GET | `/api/health` | 健康检查 + 路网摘要 |
 | GET | `/api/roads/summary` | 路网统计（边数、总长、道路名） |
+| GET | `/api/roads/travel-profile?trajectory_ids=...` | 道路通行画像（按边+方向的典型/高峰速度） |
 | POST | `/api/trajectories` | 提交轨迹，默认立即匹配 |
 | GET | `/api/trajectories` | 轨迹列表 |
 | GET | `/api/trajectories/{id}` | 轨迹详情（含原始点） |
@@ -82,6 +83,51 @@ curl http://localhost:8000/api/trajectories/$TID/match/geojson > matched.geojson
   - `no_candidate_within_radius` — 搜索半径内无候选道路
   - `no_feasible_transition` — 路网不连通或隐含速度超过硬上限
 - `segments`：匹配成功的连续分段及其沿网几何
+
+### 道路通行画像
+
+`GET /api/roads/travel-profile?trajectory_ids=<id1,id2,...>` 基于**已持久化的匹配结果**，
+按**道路边 + 行驶方向**聚合多条轨迹的通行速度：
+
+- 对每对相邻匹配点，沿转移明细中的沿网路径（`legs`）拆分到途经的每一条边，
+  按各边里程占比分摊时间差，得到 `(边, 方向)` 维度的距离/时长/速度样本；
+- `median_speed_kmh` 为中位数（**典型通行速度**），`p90_speed_kmh` 为 P90 线性插值分位数
+  （**高峰通行速度**）；
+- `direction`：`forward` 与边几何首节点→末节点同向，`backward` 为反向；
+- 时间戳缺失、逆序、不增（时间差为 0）、断段不连贯或沿网距离为 0 的样本会被剔除，
+  并在 `ignored_samples` 中逐条给出 `trajectory_id` / `seq` / `reason` / `detail`；
+- 轨迹不存在或尚未匹配时跳过并在 `ignored_trajectories` 说明；
+- **无有效样本时返回 200 + 空 `edges`**（不传参数同样返回空数据），不会 500。
+
+```bash
+curl "http://localhost:8000/api/roads/travel-profile?trajectory_ids=$TID"
+# {
+#   "trajectory_ids": ["ab12..."],
+#   "trajectory_count": 1,
+#   "transition_count": 47,
+#   "ignored_sample_count": 0,
+#   "ignored_trajectories": [],
+#   "ignored_samples": [],
+#   "edges": [
+#     {
+#       "edge_id": "jing5-3", "edge_name": "经五路", "direction": "forward",
+#       "sample_count": 5, "edge_length_m": 400.3,
+#       "distance_m": 400.3, "duration_s": 32.4,
+#       "median_speed_kmh": 43.0, "p90_speed_kmh": 48.3
+#     }
+#   ]
+# }
+```
+
+`ignored_samples[].reason` 取值：
+
+| reason | 含义 |
+|---|---|
+| `missing_timestamp` | 相邻匹配点之一缺少时间戳 |
+| `timestamp_reversed` | 后点时间戳早于前点（逆序） |
+| `timestamp_not_increasing` | 相邻点时间戳相同，时间差为 0 |
+| `not_contiguous` | 断段两侧 / 段首点，无沿网转移路径 |
+| `zero_route_distance` | 沿网距离为 0，无法测速与判向 |
 
 ## 算法说明
 
@@ -127,6 +173,7 @@ app/
     geo.py                # 投影与距离计算
     road_network.py       # 路网加载、空间索引、候选投影、Dijkstra
     matcher.py            # HMM + Viterbi 解码、断段处理
+    travel_profile.py     # 道路通行画像：按边+方向聚合 median/P90 速度、样本剔除
 scripts/generate_roads.py # 生成内置路网与示例轨迹
 examples/sample_trajectory.json
 tests/                    # 单元测试 + API 端到端测试
